@@ -1,0 +1,190 @@
+===============================================
+  EMPLOYEE MANAGEMENT SYSTEM - BACKEND
+  Quick Start Guide
+===============================================
+
+📋 PREREQUISITES
+----------------
+✓ Java 17 or higher
+✓ Maven 3.6 or higher
+
+Check versions:
+  java -version
+  mvn -version
+
+
+🚀 HOW TO RUN
+-------------
+
+Step 1: Open terminal/command prompt
+
+Step 2: Navigate to backend directory
+  cd backend
+
+Step 3: Build the project
+  mvn clean install
+
+Step 4: Run the application
+  mvn spring-boot:run
+
+Step 5: Wait for startup message
+  "Employee Management System Started!"
+  "API Base URL: http://localhost:8080/api"
+
+
+✅ VERIFY IT'S RUNNING
+-----------------------
+
+Open browser and go to:
+  http://localhost:8080/api/employees
+
+Or use curl:
+  curl http://localhost:8080/api/employees
+
+You should see JSON data with 15 employees.
+
+
+🧪 TEST WITH POSTMAN
+---------------------
+
+1. Open Postman
+2. Import file: EMS-Postman-Collection.json
+3. Test the login endpoint:
+   POST http://localhost:8080/api/auth/login
+   Body: {"email": "admin@ems.com", "password": "admin123"}
+
+
+🔐 DEFAULT LOGIN CREDENTIALS
+------------------------------
+
+Admin Account:
+  Email: admin@ems.com
+  Password: admin123
+
+Manager Account:
+  Email: manager@ems.com
+  Password: manager123
+
+Employee Account:
+  Email: employee@ems.com
+  Password: employee123
+
+
+📊 AVAILABLE ENDPOINTS
+-----------------------
+
+Base URL: http://localhost:8080/api
+
+Authentication:
+  POST /auth/login
+  GET /auth/user/{id}
+
+Employees:
+  GET /employees
+  POST /employees
+  GET /employees/{id}
+  PUT /employees/{id}
+  DELETE /employees/{id}
+  GET /employees/search?q={term}
+  GET /employees/stats
+
+Departments:
+  GET /departments
+  POST /departments
+  GET /departments/{id}
+  PUT /departments/{id}
+  DELETE /departments/{id}
+
+Attendance:
+  GET /attendance
+  POST /attendance
+  GET /attendance/employee/{empId}
+  GET /attendance/today
+  GET /attendance/employee/{empId}/stats
+
+Leaves:
+  GET /leaves
+  POST /leaves
+  GET /leaves/pending
+  POST /leaves/{id}/approve
+  POST /leaves/{id}/reject
+
+
+🛑 HOW TO STOP
+--------------
+
+Press: Ctrl + C
+
+
+⚠️ TROUBLESHOOTING
+-------------------
+
+Issue: Port 8080 already in use
+Solution: 
+  - Stop other application using port 8080
+  - Or change port in application.properties
+
+Issue: Build fails
+Solution:
+  - Check Java version (must be 17+)
+  - Run: mvn clean install -U
+
+Issue: Cannot connect
+Solution:
+  - Ensure application is running
+  - Check firewall settings
+  - Verify URL includes /api prefix
+
+
+📚 DOCUMENTATION
+----------------
+
+For detailed information, see:
+  - README.md - Complete API documentation
+  - SETUP_GUIDE.md - Detailed setup instructions
+  - API_TESTING_GUIDE.md - Testing examples
+  - API_REFERENCE.md - Quick API reference
+
+
+💡 QUICK TIPS
+-------------
+
+✓ All data is stored in-memory
+✓ Data resets when you restart the server
+✓ CORS is already configured
+✓ No database setup needed
+✓ Ready for React frontend integration
+
+
+🎯 INTEGRATION WITH REACT
+--------------------------
+
+In your React app, set API base URL to:
+  const API_BASE_URL = "http://localhost:8080/api";
+
+Example fetch:
+  fetch('http://localhost:8080/api/employees')
+    .then(res => res.json())
+    .then(data => console.log(data));
+
+
+✅ SUCCESS CHECKLIST
+--------------------
+
+□ Backend starts without errors
+□ Can access http://localhost:8080/api/employees
+□ Login works with default credentials
+□ Can create, update, delete employees
+□ Postman collection works
+
+
+🎉 YOU'RE ALL SET!
+------------------
+
+The backend is running and ready to use!
+
+For more help, refer to the documentation files.
+
+Happy coding! 🚀
+
+===============================================
